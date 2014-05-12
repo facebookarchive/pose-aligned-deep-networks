@@ -11,4 +11,4 @@ PANDA requires Matlab. It has been tested on 2012b and 2013a versions.
 See the CONTRIBUTING file for how to help out.
 
 ## License
-MyProject is BSD-licensed. We also provide an additional patent grant.
+PANDA is BSD-licensed. We also provide an additional patent grant.
