@@ -1,4 +1,4 @@
-# Contributing to PANDA
+# Contributing to pose-aligned-deep-networks
 We want to make contributing to this project as easy and transparent as
 possible.
 
@@ -34,5 +34,5 @@ outlined on that page and do not file a public issue.
 * ...
 
 ## License
-By contributing to PANDA, you agree that your contributions will be licensed
+By contributing to pose-aligned-deep-networks, you agree that your contributions will be licensed
 under its BSD license.
