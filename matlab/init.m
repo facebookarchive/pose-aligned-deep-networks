@@ -65,7 +65,7 @@ if config.CLUSTER
     % For the matlab cluster the data must be in a shared directory
     config.TMP_DIR = ['/home/' user '/attributes/attr' extension];
 else
-    config.TMP_DIR = ['/data/users/' user '/attributes/attr' extension];
+    config.TMP_DIR = ['data/temp/attr' extension];
 end
 config.ATTR_CNN = true; % Do we use deep learning for attributes
 
@@ -82,13 +82,13 @@ config.CNN_MIRROR = false;
 config.CNN_MULTIVIEW = false;
 config.CNN_NORMALIZATION_TYPE = 'power';
 
-config.ROOT_DIR = ['~/local/fbcode_data/vision/attr' extension];
+config.ROOT_DIR = ['data/storage/attr' extension];
 if config.DATASET == config.DATASET_ICCV || config.DATASET == config.DATASET_ICCV_DPM
-   config.ICCV_DATASET_DIR = '/home/engshare/fbcode_data/vision/attributes/datasets/berkeley_attributes_dataset';
+   config.ICCV_DATASET_DIR = 'data/datasets/berkeley_attributes_dataset';
    config.ICCV_TESTIMAGEIDS_OFFSET = 10000;
 end
 if config.DATASET == config.DATASET_LFW
-   config.LFW_DATASET_DIR = '/home/engshare/fbcode_data/vision/attributes/datasets/lfw';
+   config.LFW_DATASET_DIR = 'data/datasets/lfw';
 end
 
 
@@ -218,7 +218,7 @@ config.MAX_HYPS = 100000000;
 config.LIBLINEAR_B=10;     % bias when training poselet SVMs
 
 % poselets model
-config.MODEL_FILE='/home/engshare/fbcode_data/vision/poselets/categories/person/model.mat';
+config.MODEL_FILE='data/person/model.mat';
 model = load(config.MODEL_FILE);
 model = model.model;
 
