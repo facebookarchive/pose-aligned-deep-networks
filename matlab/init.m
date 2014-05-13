@@ -21,8 +21,7 @@ addpath detector;
 addpath detector/poselet_detection;
 addpath facer;
 addpath features;
-addpath attributes;
-addpath attributes/cnn_hybrid;
+addpath cnn_hybrid;
 addpath cvx;
 global config;
 
@@ -39,7 +38,7 @@ config.DATASET_FB_DPM = 7;
 config.DATASET_NAME = {'Facebook Dataset','ICCV11 Dataset','Facebook LargeScale Dataset',...
     'LFW','Facebook Extended Attributes Dataset', 'ICCV DPM', 'Facebook Dataset DPM'};
 
-config.DATASET = config.DATASET_FB_DPM;
+config.DATASET = config.DATASET_LFW;
 
 config.FBLARGE_VERSION = 1;
 switch config.DATASET

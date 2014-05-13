@@ -1,0 +1,39 @@
+mhost := $(shell hostname)
+
+matlab := /usr/sww/pkg/matlab-r2008a
+
+mexinc := -I$(matlab)/extern/include
+mex := $(matlab)/bin/mex
+mexext := $(shell $(matlab)/bin/mexext)
+
+cxx := g++
+cppflags :=  -I../utils
+cxxflags := -Wall -O3 -fstrict-aliasing 
+
+ompcflags := -D NO_OMP
+#ompcflags := -fopenmp
+ompldflags := -L/usr/lib/gcc/x86_64-linux-gnu/4.1.2/
+#ompldflags := -L/usr/lib/gcc/x86_64-linux-gnu/4.1.2/ -lgomp
+
+cuda := /usr/local/cuda
+nvcc := $(cuda)/bin/nvcc
+nvccflags := -O3 
+
+ifeq ($(uname),Linux)
+ culdflags := -L$(cuda)/lib64 -lcudart -lcublas -lcufft
+else
+ culdflags := -L$(cuda)/lib -lcudart -lcublas -lcufft
+endif
+
+
+compute_hog_mex.$(mexext): hog_omp.$(mexext)
+	@mv -v $^ $@
+
+hog_omp.$(mexext): hog_omp.o config.o
+	$(matlab)/bin/mex -cxx -largeArrayDims -g $(ldflags) $(ompldflags) $^
+
+%.o: %.cc
+	$(cxx) -fPIC -c $^ $(mexinc) $(cppflags) $(cxxflags) $(ompcflags) -o $@
+
+clean:
+	rm -f *.o *.$(mexext)

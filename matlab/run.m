@@ -19,16 +19,18 @@ init;
 data = create_training_directory(model,config);
 
 %%%%%run DPM added by Ning%%%%%
-try
-    load([config.ROOT_DIR '/dpm_phits']);
-catch
-    q = load('dpm_human_weak.mat');
-    dpm_model = q.model;
-    dpm_phits = get_dpm_hits(config, dpm_model, data.ohits);
-    save([config.ROOT_DIR '/dpm_phits'], 'dpm_phits');
+if 0
+    try
+        load([config.ROOT_DIR '/dpm_phits']);
+    catch
+        q = load('dpm_human_weak.mat');
+        dpm_model = q.model;
+        dpm_phits = get_dpm_hits(config, dpm_model, data.ohits);
+        save([config.ROOT_DIR '/dpm_phits'], 'dpm_phits');
+    end
+    data.phits = dpm_phits;
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 end
-data.phits = dpm_phits;
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 if config.ATTR_CNN
     ap = train_attr_classifier_cnn(data,config);    
