@@ -9,7 +9,7 @@
  %%
 function [ap,scores] = train_attr_classifier_cnn(data, config)
 
-cnn_out_file = sprintf('%s/labels.mat', config.CNN_PATCHES_DIR);
+cnn_out_file = sprintf('%s/poselet_1/patches.mat', config.CNN_PATCHES_DIR);
 if ~exist(cnn_out_file, 'file')
     prepare_cnn_phits(data, config);
 end

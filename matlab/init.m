@@ -56,11 +56,8 @@ config.CNN_PATCHES_DIR ...
 config.CNN_MODEL_TYPE = 'combined';
 
 config.FULL_CROPS_DIR = [config.TMP_DIR '/full_crops'];
-config.CNN_GLOBAL_MODEL_TYPE = 'espresso';%'decaf';%decaf or espresso
-config.CNN_GLOBAL_VAL_FEATURES_FILE = [config.TMP_DIR '/cnn_' ...
-    config.CNN_GLOBAL_MODEL_TYPE '_val_features.mat'];
-config.CNN_GLOBAL_TEST_FEATURES_FILE = [config.TMP_DIR '/cnn_' ...
-    config.CNN_GLOBAL_MODEL_TYPE '_test_features.mat'];
+config.CNN_GLOBAL_VAL_FEATURES_FILE = [config.TMP_DIR '/cnn_global_val_features.mat'];
+config.CNN_GLOBAL_TEST_FEATURES_FILE = [config.TMP_DIR '/cnn_global_test_features.mat'];
 config.CNN_GLOBAL_VAL_PATCHES_FILE = [config.TMP_DIR '/cnn_fullcrop_val_patches.mat'];
 config.CNN_GLOBAL_TEST_PATCHES_FILE = [config.TMP_DIR '/cnn_fullcrop_test_patches.mat'];
 config.CNN_GLOBAL_MODEL_DIMS = [256 256];

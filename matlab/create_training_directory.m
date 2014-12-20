@@ -18,7 +18,7 @@ save_dir = config.ROOT_DIR;
 savefile = fullfile(save_dir,'data.mat');
 if ~exist(savefile,'file')
     data = get_iccv_data(config);
-    generate_poselet_hits_and_patches(data, poselet_model, config);
+    generate_poselet_hits(data, poselet_model, config);
     save(savefile, 'data');
 else
     load(savefile);
