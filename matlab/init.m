@@ -41,7 +41,7 @@ config.CNN_NORMALIZATION_TYPE = 'power';
 config.ROOT_DIR = ['~/local/fbcode_data/vision/attr' extension];
 
 config.ICCV_DATASET_DIR = '~/local/fbcode_data/vision/attributes/datasets/berkeley_attributes_dataset';
-  
+config.ICCV_TESTIMAGEIDS_OFFSET = 10000;
 config.IMAGES_DIR =  [config.TMP_DIR '/images'];
 config.PATCHES_DIR = [config.TMP_DIR '/patches'];
 config.PHITS_DIR= [config.TMP_DIR '/phits'];
