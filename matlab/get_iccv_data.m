@@ -50,6 +50,8 @@ assert(isequal(qqq.bad,find(isnan(data.ohits.bounds(1,:)))));
 data.ohits.bounds(:,qqq.bad) = qqq.bounds';
 assert(~any(isnan(data.ohits.bounds(:))));
 
+% Run poselet detection
+% TODO fix this
 res = dbquery(['select p.photo_fbid, p.hyp_id, p.poselet_id, p.xmin, p.ymin,' ...
     'p.width, p.height, p.score from ' config.POSELET_TABLE ' as p limit 10000000']);
 
