@@ -1,16 +1,16 @@
 PANDA code
 =============
-PANDA (Pose-aligned Networks for Deep Attibute) is an attribute classification system using deep neural nets. This work is created by Ning Zhang, Manohar Paluri, Marc'Aurelio Ranzato, Trevor Darrell and Lubomir Bourdev.
+PANDA (Pose-Aligned Networks for Deep Attibute) is an attribute classification system using deep neural nets. This work is created by Ning Zhang, Manohar Paluri, Marc'Aurelio Ranzato, Trevor Darrell and Lubomir Bourdev.
 
 ### Citing this work
 If you are using this code for your research, please cite the following paper:
 
-  @inproceedings{ZhangCVPR14,
-      Author = {Zhang, Ning and Paluri, Manohar and Rantazo, Marc'Aurelio and Darrell, Trevor and Bourdev, Lubomir},
-      Title = {PANDA: Pose Aligned Networks for Deep Attribute Modeling},
-      Booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
-      Year = {2014}
-  }
+    @inproceedings{ZhangCVPR14,
+        Author = {Zhang, Ning and Paluri, Manohar and Rantazo, Marc'Aurelio and Darrell, Trevor and Bourdev, Lubomir},
+        Title = {PANDA: Pose Aligned Networks for Deep Attribute Modeling},
+        Booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+        Year = {2014}
+    }
 
 ### Prerequisites
 0. **Caffe**
