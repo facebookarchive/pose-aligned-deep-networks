@@ -19,7 +19,7 @@ end
 %%
 
 
-if 1 || ~exist(config.CNN_VAL_FEATURES_FILE, 'file') || ...
+if ~exist(config.CNN_VAL_FEATURES_FILE, 'file') || ...
    ~exist(config.CNN_TEST_FEATURES_FILE, 'file')
     tic;
 	[val_features, test_features] = ...
@@ -32,7 +32,7 @@ end
 
 
 if  ~isequal(config.CNN_MODEL_TYPE,'parts')
-    if 1 || ~exist(config.CNN_GLOBAL_VAL_FEATURES_FILE, 'file')
+    if ~exist(config.CNN_GLOBAL_VAL_FEATURES_FILE, 'file')
         tic;
         patch_dims = config.CNN_GLOBAL_MODEL_DIMS .* [2 1];
         [fail_idx, patches] = ...
@@ -51,7 +51,7 @@ else
 end
 
 level2_cnn_model_file = [config.TMP_DIR '/attribute_model.mat'];
-if 1 || ~exist(level2_cnn_model_file, 'file')
+if ~exist(level2_cnn_model_file, 'file')
     load(config.CNN_VAL_FEATURES_FILE);  % val_features
     level2_model = train_level2_cnn(data.attr_labels(data.val_idx,:), ...
         val_features, valg_features, config);
@@ -65,7 +65,7 @@ clear val_features val_used;
 
 load(config.CNN_TEST_FEATURES_FILE);
 if ~isequal(config.CNN_MODEL_TYPE,'parts')
-    if  1 ||~exist(config.CNN_GLOBAL_TEST_FEATURES_FILE, 'file')
+    if ~exist(config.CNN_GLOBAL_TEST_FEATURES_FILE, 'file')
         tic;
         patch_dims = config.CNN_GLOBAL_MODEL_DIMS .* [2 1];
         [fail_idx, patches] = extract_person_patches(config, ...
