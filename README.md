@@ -18,6 +18,7 @@ If you are using this code for your research, please cite the following paper:
   - Put caffe directory inside pose-aligned-deep-networks/
 
 0. **Poselet Detection (only if you need to run on your own data)** 
+
 We provide cached poselet detections for Berkeley Attribute Dataset used in the papaer. If you want to use your own data, you have to 
   - Download poselet detection code from http://www.cs.berkeley.edu/~lbourdev/poselets/
   - Run poselet detection on your images. The code returns poselet activations clustered into person hypotheses
