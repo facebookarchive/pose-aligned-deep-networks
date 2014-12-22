@@ -17,10 +17,12 @@ If you are using this code for your research, please cite the following paper:
   - Download caffe from Ning Zhang's caffe fork https://github.com/n-zhang/caffe
   - Put caffe directory inside pose-aligned-deep-networks/
 
-0. **Poselet Detection**
+0. **Poselet Detection (only if you need to run on your own data)** 
+We provide cached poselet detections for Berkeley Attribute Dataset used in the papaer. If you want to use your own data, you have to 
   - Download poselet detection code from http://www.cs.berkeley.edu/~lbourdev/poselets/
-  - Run poselet detection on your own data if needed.
-  - Substract poselet_id by 1 inside phits.
+  - Run poselet detection on your images. The code returns poselet activations clustered into person hypotheses
+  - Match the hypotheses to your ground truths, taking into account the overlap and score. See Section 5 of [1] for details.
+  - Substract 1 from poselet_id inside phits to make them compatible to the PANDA version.
 
 0. **MATLAB**
   - The software is tested on MATLAB R2012b and R2012a versions.
@@ -35,4 +37,5 @@ This software is under BSD License, please refer to LICENSE file. We also provid
 ### Bug report
 If you have any issues running the codes, please report issues on github page. If you want to contribute to the codes, please follow the instructions in CONTRIBUTING.md. If you have any questions about the paper, please contact Ning Zhang (nzhang@eecs.berkeley.edu).
 
-
+[1] Lubomir Bourdev and Jitendra Malik. Poselets: Body Part Detectors Trained Using 3D Human Pose Annotations. In ICCV 2009.
+ 
