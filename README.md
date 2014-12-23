@@ -33,7 +33,7 @@ We provide cached poselet detections for Berkeley Attribute Dataset used in the 
   - All the cached features can be found at http://www.eecs.berkeley.edu/~nzhang/codes/panda_caches.tgz.
 
 ### License
-This software is under BSD License, please refer to LICENSE file. We also provide an additional patent grant.
+This software is under BSD License, please refer to LICENSE file.
 
 ### Bug report
 If you have any issues running the codes, please report issues on github page. If you want to contribute to the codes, please follow the instructions in CONTRIBUTING.md. If you have any questions about the paper, please contact Ning Zhang (nzhang@eecs.berkeley.edu).
