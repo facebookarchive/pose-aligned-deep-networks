@@ -38,7 +38,7 @@ data.test_idx = (length(train_imageids)+(1:length(test_imageids)))';
 
 
 % Patch the ICCV bounds
-qqq=load([config.ICCV_DATASET_DIR '/iccv_bounds_patches.mat']);
+qqq=load('iccv_bounds_patches.mat');
 assert(isequal(qqq.bad,find(isnan(data.ohits.bounds(1,:)))));
 data.ohits.bounds(:,qqq.bad) = qqq.bounds';
 assert(~any(isnan(data.ohits.bounds(:))));
